@@ -167,7 +167,12 @@ const options = {
 };
 
 // 启动服务器
-const PORT = 8443;
-https.createServer(options, app).listen(PORT, () => {
-  console.log(`Server running on https://localhost:${PORT}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log('Server running on port ' + PORT);
 });
+
+// const PORT = 8443;
+// https.createServer(options, app).listen(PORT, () => {
+//  console.log(`Server running on https://localhost:${PORT}`);
+// });
